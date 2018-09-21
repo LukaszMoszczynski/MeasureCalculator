@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MeasureCalculator</title>
+		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<section>
+			<div class="calculator">
+				<form>
+					<input type="number" name="measures" value="0" id="field">
+					<div class="info">
+						<p>Wybierz jednostkę miary:</p>
+						<select id="options">
+							<optgroup label="Temperatura">
+								<option value="celcius">Stopnie Celsjusza</option>
+								<option value="kelvin">Stopnie Kelvina</option>
+								<option value="fahrenheit">Stopnie Fahrenheita</option>
+							</optgroup>
+							<optgroup label="Długość">
+								<option value="meter">Metr</option>
+								<option value="inch">Cal</option>
+								<option value="foot">Stopa</option>
+								<option value="yard">Jard</option>
+								<option value="landMile">Mila</option>
+								<option value="nauticalMile">Mila morska</option>
+							</optgroup>
+						</select>
+					</div>
+					<button type="button" id="btn">Przelicz</button>
+				</form>	
+				<div class="answer" id="answer"></div>	
+			</div>
+		</section>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	</body>
+</html>

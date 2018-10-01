@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans");
-@import url("https://fonts.googleapis.com/css?family=Baloo+Chettan");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 body {
   overflow: hidden;
-  font-family: 'Baloo Chettan', cursive;
+  font-family: 'Roboto', sans-serif;
 }
 
 section {
@@ -10,7 +10,7 @@ section {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  background-image: url("../images/bckg.jpg");
+  background-image: url("../images/bckgrd.jpg");
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,9 +19,17 @@ section {
 
 section h1 {
   margin-top: 5%;
-  font-family: 'Indie Flower', cursive;
   font-size: 40px;
   letter-spacing: 4px;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+}
+
+@media (max-width: 500px) {
+  section h1 {
+    font-size: 30px;
+    letter-spacing: 2px;
+  }
 }
 
 section .calculator {
@@ -35,12 +43,23 @@ section .calculator {
   background-color: #e6e6e6;
 }
 
+@media (min-width: 1920px) {
+  section .calculator {
+    width: 800px;
+  }
+}
+
+@media (max-width: 500px) {
+  section .calculator {
+    width: 100%;
+  }
+}
+
 section .calculator form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  border-bottom: 1px solid black;
 }
 
 section .calculator form input {
@@ -51,8 +70,14 @@ section .calculator form input {
   border: 2px solid black;
   border-radius: 5px;
   padding-right: 10px;
-  margin: 10px 10px;
-  font-family: 'Baloo Chettan', cursive;
+  margin: 5%;
+  font: inherit;
+}
+
+@media (min-width: 1920px) {
+  section .calculator form input {
+    font-size: 18px;
+  }
 }
 
 section .calculator form input:focus {
@@ -68,7 +93,7 @@ section .calculator form input[type=number]::-webkit-outer-spin-button {
 section .calculator form .info {
   width: 200px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   background-color: #668cff;
@@ -76,11 +101,20 @@ section .calculator form .info {
   color: #fff;
   border-radius: 5px;
   height: 60px;
+  font-size: 14px;
+}
+
+@media (min-width: 1920px) {
+  section .calculator form .info {
+    width: 250px;
+    font-size: 18px;
+    height: 70px;
+  }
 }
 
 section .calculator form .info p {
   margin: 0;
-  padding-bottom: 5px;
+  padding: 0 0 0 12px;
 }
 
 section .calculator form .info select {
@@ -91,7 +125,14 @@ section .calculator form .info select {
   background-color: #668cff;
   appearance: button;
   color: #fff;
-  font-family: 'Baloo Chettan', cursive;
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (min-width: 1920px) {
+  section .calculator form .info select {
+    width: 250px;
+  }
 }
 
 section .calculator form .info select:focus {
@@ -105,19 +146,34 @@ section .calculator form .info select optgroup {
 section .calculator form button {
   width: 200px;
   height: 60px;
+  font-size: 16px;
   cursor: pointer;
   color: white;
   background-color: #5cd65c;
-  border: none;
+  border-color: #5cd65c;
   border-radius: 5px;
   transition: 0.5s;
-  font-family: 'Baloo Chettan', cursive;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (min-width: 1920px) {
+  section .calculator form button {
+    width: 250px;
+    margin-left: 70px;
+    font-size: 18px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 435px) {
+  section .calculator form button {
+    margin-bottom: 15px;
+  }
 }
 
 section .calculator form button:hover {
   background: #2eb72e;
   color: #aeebae;
-  letter-spacing: 2px;
 }
 
 section .calculator form button:focus {
@@ -125,6 +181,7 @@ section .calculator form button:focus {
 }
 
 section .calculator .answer {
+  padding: 20px 5px;
   background-color: white;
   width: 90%;
   display: flex;
@@ -133,10 +190,17 @@ section .calculator .answer {
   min-height: 100px;
   height: 100%;
   margin: 5%;
-  letter-spacing: 2px;
+  letter-spacing: 0.5px;
   line-height: 30px;
   border: 2px solid black;
   border-radius: 5px;
+  font-size: 14px;
+}
+
+@media (min-width: 1920px) {
+  section .calculator .answer {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

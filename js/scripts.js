@@ -117,6 +117,7 @@ function calculate() {
 
 field.addEventListener('keypress',(function (e) {
 
+	this.value = this.value.replace(/[`]/g, '');
 	var fieldValue = field.value;
 
 	if (e.keyCode == 45 && (fieldValue.indexOf('-') != -1)) {

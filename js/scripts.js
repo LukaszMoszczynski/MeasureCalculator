@@ -3,13 +3,12 @@ var field = document.getElementById('field');
 var btn = document.getElementById('btn');
 var options = document.getElementById('options');
 
-
-
-
-
 function calculate() {
+
 	var opt = this.options[this.selectedIndex].value;
-	var fieldValue = parseFloat(field.value);
+	fieldReplace = field.value.replace(/,/g, '.');
+	var fieldValue = parseFloat(fieldReplace);
+
 	if (!isNaN(fieldValue)) {
 ///temps
 		if (opt == "celcius") {
@@ -117,26 +116,35 @@ function calculate() {
 }
 
 field.addEventListener('keypress',(function (e) {
- 	if (e.keyCode == 43 || e.keyCode == 45) {
-    	e.preventDefault();    	
-    }
 
-    if (e.keyCode == 44 || e.keyCode == 46) { 	
-    	var fieldValue = field.value;
-    	if ((fieldValue.indexOf('.') != -1) || (fieldValue.indexOf(',') != -1)) {
-    		e.preventDefault();
-    		answer.innerHTML = "Można wprowadzić tylko jeden separator dziesiętny";
-    	} else {
-    		return;
-    	} 
-    	
-    }
+	var fieldValue = field.value;
 
-
-    if (e.keyCode == 13) {
+	if (e.keyCode == 45 && (fieldValue.indexOf('-') != -1)) {
 		e.preventDefault();
-		options.click();
+		answer.innerHTML = "Można wprowadzić tylko jeden znak minus";
 	}
+
+	console.log(typeof fieldValue);
+	console.log(fieldValue.charAt(0));
+
+    if ((e.keyCode == 44 || e.keyCode == 46) && ((fieldValue.indexOf('.') != -1) || (fieldValue.indexOf(',') != -1))) { 
+    	e.preventDefault();
+    	answer.innerHTML = "Można wprowadzić tylko jeden separator dziesiętny";
+    } 
+
+	if (e.keyCode == 13) {
+			e.preventDefault();
+			options.click();
+	} 
+
+	if (!((e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105) && (e.keyCode < 44 || e.keyCode > 46))) {
+            return;
+    }
+
+	else {
+		e.preventDefault();
+    }   	
+
 }), false);
 
 function count() {
@@ -146,4 +154,5 @@ function count() {
 options.addEventListener('change', calculate, false);
 options.addEventListener('click', calculate, false);
 btn.addEventListener('click', count, false);
+
 

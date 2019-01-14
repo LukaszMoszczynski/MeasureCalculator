@@ -75,6 +75,23 @@ section .calculator form {
 section .calculator form .plusMinus {
   width: 10%;
   height: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background-color: #5cd65c;
+  border-color: #5cd65c;
+  border-radius: 5px;
+  transition: 0.5s;
+  font-family: 'Roboto', sans-serif;
+}
+
+section .calculator form .plusMinus:hover {
+  background: #2eb72e;
+  color: #aeebae;
+}
+
+section .calculator form .plusMinus:focus {
+  outline: none;
 }
 
 section .calculator form input {
@@ -164,7 +181,7 @@ section .calculator form .info select optgroup {
   font-weight: 40;
 }
 
-section .calculator form button {
+section .calculator form .count {
   width: 200px;
   height: 60px;
   font-size: 16px;
@@ -178,7 +195,7 @@ section .calculator form button {
 }
 
 @media (min-width: 1920px) {
-  section .calculator form button {
+  section .calculator form .count {
     width: 250px;
     margin-left: 70px;
     font-size: 18px;
@@ -187,17 +204,17 @@ section .calculator form button {
 }
 
 @media (max-width: 435px) {
-  section .calculator form button {
+  section .calculator form .count {
     margin-bottom: 15px;
   }
 }
 
-section .calculator form button:hover {
+section .calculator form .count:hover {
   background: #2eb72e;
   color: #aeebae;
 }
 
-section .calculator form button:focus {
+section .calculator form .count:focus {
   outline: none;
 }
 

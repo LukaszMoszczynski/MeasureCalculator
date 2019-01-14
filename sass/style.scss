@@ -48,6 +48,21 @@ section {
 			.plusMinus {
 				width: 10%;
 				height: 50px;
+				font-size: 16px;
+				cursor: pointer;
+				color: white;
+				background-color: #5cd65c;	
+				border-color: #5cd65c;
+				border-radius: 5px;
+				transition: 0.5s;
+				font-family: 'Roboto', sans-serif;
+				&:hover {
+					background: darken(#5cd65c, 15%);
+					color: lighten(#5cd65c, 20%); 
+				}
+				&:focus {
+					outline: none;
+				}
 			}
 			input{
 				width: 75%;
@@ -113,7 +128,7 @@ section {
 					}
 				}
 			}		
-			button {
+			.count {
 				width: 200px;
 				height: 60px;
 				font-size: 16px;

@@ -203,7 +203,6 @@ section .calculator form .count:focus {
 }
 
 section .calculator .answer {
-  padding: 20px 5px;
   background-color: white;
   width: 90%;
   display: flex;
@@ -211,7 +210,7 @@ section .calculator .answer {
   align-items: center;
   min-height: 100px;
   height: 100%;
-  margin: 5%;
+  margin: 25% 5% 5%;
   letter-spacing: 0.5px;
   line-height: 30px;
   border: 2px solid black;
